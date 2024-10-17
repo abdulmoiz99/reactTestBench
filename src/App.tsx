@@ -1,24 +1,22 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 import './App.css'
+import Todo from './Todo';
 
-type User = {
-  id: number,
-  name: string
-}
+
+
 
 function App() {
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSeconds(previous => previous + 1)
-    }, 1000)
+  const [count, setCount] = useState(0);
+  const [todo, setTodo] = useState<string[]>([]);
 
-    return () => { clearInterval(timer) }
-  }, [])
-  const [seconds, setSeconds] = useState(0);
-
+  const addTodo = useCallback(() => {
+    setTodo([...todo, 'new Todo'])
+  }, [todo])
   return (
     <>
-      <h1>Time: {seconds} seconds</h1>
+      <h3>Count: {count}</h3>
+      <button onClick={() => setCount(previous => previous + 1)}>Update</button>
+      <Todo todo={todo} addTodo={addTodo} />
     </>
   )
 }
