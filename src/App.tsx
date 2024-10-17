@@ -1,33 +1,24 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { FormEvent, useRef } from 'react'
 import './App.css'
 
 function App() {
-  const [formData, setFormData] = useState({ username: "", password: "" })
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   const submitForm = (e: FormEvent) => {
     e.preventDefault();
-    console.log(formData)
-  }
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({ ...prevState, [name]: value }));
+    console.log(usernameRef.current?.value)
+    console.log(passwordRef.current?.value)
+
   }
   return (
     <>
       <form onSubmit={submitForm}>
         <p>Username:
-          <input
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
+          <input ref={usernameRef} />
         </p>
         <p>Password:
-          <input
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
+          <input ref={passwordRef} />
         </p>
         <button type='submit'>Submit</button>
       </form>
