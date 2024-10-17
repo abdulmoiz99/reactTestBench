@@ -1,27 +1,31 @@
-import { FormEvent, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
+type User = {
+  id: number,
+  name: string
+}
+
 function App() {
-  const usernameRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    fetchUser();
+  }, [])
 
-  const submitForm = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(usernameRef.current?.value)
-    console.log(passwordRef.current?.value)
+  const [users, setUsers] = useState<User[]>([]);
 
+  const fetchUser = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const result = await response.json();
+    console.log(result)
+    setUsers(result)
   }
+
+
   return (
     <>
-      <form onSubmit={submitForm}>
-        <p>Username:
-          <input ref={usernameRef} />
-        </p>
-        <p>Password:
-          <input ref={passwordRef} />
-        </p>
-        <button type='submit'>Submit</button>
-      </form>
+      {users.map((user) => (
+        <h3 key={user.id}>{user.id}: {user.name}</h3>
+      ))}
     </>
   )
 }
