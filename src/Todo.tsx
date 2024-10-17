@@ -18,4 +18,4 @@ const Todo = (props: PropsType) => {
     )
 }
 
-export default memo(Todo) as Todo;
+export default memo(Todo);
