@@ -1,22 +1,19 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
-import Todo from './Todo';
-
-
-
+import { ExpensiveComponent } from './ExpensiveComponent'
 
 function App() {
+  const [number, setNumber] = useState(0);
   const [count, setCount] = useState(0);
-  const [todo, setTodo] = useState<string[]>([]);
 
-  const addTodo = useCallback(() => {
-    setTodo([...todo, 'new Todo'])
-  }, [todo])
   return (
     <>
-      <h3>Count: {count}</h3>
-      <button onClick={() => setCount(previous => previous + 1)}>Update</button>
-      <Todo todo={todo} addTodo={addTodo} />
+      <h2>Count: {count}</h2>
+      <ExpensiveComponent number={number} />
+      <button onClick={() => setCount(count + 1)}>Count +</button>
+      <br />
+      <br />
+      <button onClick={() => setNumber(number + 1)}>Number +</button>
     </>
   )
 }
