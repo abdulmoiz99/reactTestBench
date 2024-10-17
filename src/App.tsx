@@ -8,24 +8,17 @@ type User = {
 
 function App() {
   useEffect(() => {
-    fetchUser();
+    const timer = setInterval(() => {
+      setSeconds(previous => previous + 1)
+    }, 1000)
+
+    return () => { clearInterval(timer) }
   }, [])
-
-  const [users, setUsers] = useState<User[]>([]);
-
-  const fetchUser = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const result = await response.json();
-    console.log(result)
-    setUsers(result)
-  }
-
+  const [seconds, setSeconds] = useState(0);
 
   return (
     <>
-      {users.map((user) => (
-        <h3 key={user.id}>{user.id}: {user.name}</h3>
-      ))}
+      <h1>Time: {seconds} seconds</h1>
     </>
   )
 }
