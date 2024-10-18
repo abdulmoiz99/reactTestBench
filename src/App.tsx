@@ -1,7 +1,6 @@
 // App.tsx
 import './App.css';
-import { Parent } from './childToParent/parent';
-
+import { Parent } from './ContextComunication/Parent';
 function App() {
 
   return (
