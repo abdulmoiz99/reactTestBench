@@ -1,21 +1,24 @@
-import { useState } from 'react'
-import './App.css'
-import { ExpensiveComponent } from './ExpensiveComponent'
+// App.tsx
+import { useReducer } from 'react';
+import './App.css';
+import { ReducerComponent } from './ReducerComponent';
+import { reducer, State } from './reducer';
 
 function App() {
-  const [number, setNumber] = useState(0);
-  const [count, setCount] = useState(0);
+  const initialState: State = { count: 0 };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <>
-      <h2>Count: {count}</h2>
-      <ExpensiveComponent number={number} />
-      <button onClick={() => setCount(count + 1)}>Count +</button>
-      <br />
-      <br />
-      <button onClick={() => setNumber(number + 1)}>Number +</button>
+      <h2>Count: {state.count}</h2>
+      <button onClick={() => dispatch({ type: "increment" })}>Increment</button>
+      <br /><br />
+      <button onClick={() => dispatch({ type: "decrement" })}>Decrement</button>
+      <br /><br />
+      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+      <ReducerComponent />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
