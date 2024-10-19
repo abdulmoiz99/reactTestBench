@@ -1,11 +1,13 @@
 // App.tsx
 import './App.css';
+import Courses from './Courses';
 function App() {
 
   return (
     <>
-      <h1>Test</h1>
+      <Courses />
     </>
+
   );
 }
 
