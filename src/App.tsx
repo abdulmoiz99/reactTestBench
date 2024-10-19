@@ -1,11 +1,10 @@
 // App.tsx
 import './App.css';
-import { Parent } from './ContextComunication/Parent';
 function App() {
 
   return (
     <>
-      <Parent />
+      <h1>Test</h1>
     </>
   );
 }
