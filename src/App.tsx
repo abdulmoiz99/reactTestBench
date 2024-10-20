@@ -1,10 +1,13 @@
-// App.tsx
 import './App.css';
+import Home from './Home';
+import { ThemeProvider } from './ThemeProvider';
 function App() {
 
   return (
     <>
-      <h1>App</h1>
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
   );
 }
