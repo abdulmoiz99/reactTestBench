@@ -1,13 +1,15 @@
 // App.tsx
 import './App.css';
-import LoginUseState from './LogginUseState';
+import { Home } from './Home';
+import { ThemeProvider } from './ThemeProvider';
 function App() {
 
   return (
     <>
-      <LoginUseState />
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
-
   );
 }
 
