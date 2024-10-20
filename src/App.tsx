@@ -1,11 +1,11 @@
 // App.tsx
 import './App.css';
-import CallbackHook from './CallBackHook';
+import MemoHook from './MemoHook';
 function App() {
 
   return (
     <>
-      <CallbackHook />
+      <MemoHook />
     </>
   );
 }
