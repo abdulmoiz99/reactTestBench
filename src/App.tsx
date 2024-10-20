@@ -1,14 +1,11 @@
 // App.tsx
 import './App.css';
-import { Home } from './Home';
-import { ThemeProvider } from './ThemeProvider';
+import Courses from './Courses';
 function App() {
 
   return (
     <>
-      <ThemeProvider>
-        <Home />
-      </ThemeProvider>
+      <Courses />
     </>
   );
 }
