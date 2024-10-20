@@ -1,11 +1,11 @@
 // App.tsx
 import './App.css';
-import MemoHook from './MemoHook';
+import { Count } from './Count';
 function App() {
 
   return (
     <>
-      <MemoHook />
+      <Count />
     </>
   );
 }
