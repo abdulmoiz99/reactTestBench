@@ -1,10 +1,11 @@
 // App.tsx
 import './App.css';
+import { RefHook } from './RefHook';
 function App() {
 
   return (
     <>
-      <h1>App</h1>
+      <RefHook />
     </>
   );
 }
