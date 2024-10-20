@@ -1,11 +1,14 @@
 // App.tsx
 import './App.css';
-import { Count } from './Count';
+import { Home } from './Home';
+import { ThemeProvider } from './ThemeProvider';
 function App() {
 
   return (
     <>
-      <Count />
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
   );
 }
