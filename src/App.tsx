@@ -1,10 +1,11 @@
 import './App.css';
+import { Count } from './Count';
 function App() {
 
   return (
     <>
       <h1>
-        App
+        <Count />
       </h1>
     </>
   );
