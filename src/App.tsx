@@ -1,12 +1,13 @@
 import './App.css';
-import { Login } from './Login';
+import Home from './Home';
+import { ThemeProvider } from './ThemeProvider';
 function App() {
 
   return (
     <>
-      <h1>
-        <Login />
-      </h1>
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
   );
 }
