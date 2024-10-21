@@ -1,9 +1,10 @@
 import './App.css';
+import { Parent } from './ParentToChild/Parent';
 function App() {
 
   return (
     <>
-      <h1>App</h1>
+      <Parent />
     </>
   );
 }
