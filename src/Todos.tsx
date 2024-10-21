@@ -1,4 +1,6 @@
-export default function Todos({ todos, addTodos }: { todos: string[], addTodos: () => void }) {
+import { memo } from "react";
+
+function Todos({ todos, addTodos }: { todos: string[], addTodos: () => void }) {
     console.log('Inside Todos');
     return (
         <>
@@ -9,3 +11,5 @@ export default function Todos({ todos, addTodos }: { todos: string[], addTodos: 
         </>
     );
 }
+
+export default memo(Todos)
