@@ -1,10 +1,10 @@
 import './App.css';
-import MemoHook from './MemoHook';
+import { Login } from './Login';
 function App() {
 
   return (
     <>
-      <MemoHook />
+      <Login />
     </>
   );
 }
