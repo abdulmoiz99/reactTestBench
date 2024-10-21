@@ -1,10 +1,13 @@
 import './App.css';
-import Counter from './Counter';
+import { Home } from './Home';
+import ThemeProvider from './ThemeProvider';
 function App() {
 
   return (
     <>
-      <Counter />
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
   );
 }
