@@ -1,10 +1,10 @@
 import './App.css';
-import { LoginUserState } from './LoginUserState';
+import Counter from './Counter';
 function App() {
 
   return (
     <>
-      <LoginUserState />
+      <Counter />
     </>
   );
 }

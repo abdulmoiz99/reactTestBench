@@ -8,7 +8,7 @@ type Action = {
     payload: string
 }
 
-export const countReducer = (state: State, action: Action) => {
+export const userReducer = (state: State, action: Action) => {
     switch (action.type) {
         case "SET_USERNAME":
             return { ...state, state: state.username = action.payload }
