@@ -1,5 +1,5 @@
 import { useReducer } from "react"
-import { countReducer, State } from "./CountReducer"
+import { State, userReducer } from "./UserReducer"
 
 export const LoginUserState = () => {
 
@@ -7,7 +7,7 @@ export const LoginUserState = () => {
         username: '',
         password: ''
     }
-    const [state, dispatch] = useReducer(countReducer, initialState)
+    const [state, dispatch] = useReducer(userReducer, initialState)
 
     const login = () => {
         console.log(state.username)
