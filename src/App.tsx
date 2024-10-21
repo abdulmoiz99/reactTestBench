@@ -1,13 +1,10 @@
 import './App.css';
-import Home from './Home';
-import { ThemeProvider } from './ThemeProvider';
+import CallbackHook from './CallBackHook';
 function App() {
 
   return (
     <>
-      <ThemeProvider>
-        <Home />
-      </ThemeProvider>
+      <CallbackHook />
     </>
   );
 }
