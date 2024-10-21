@@ -1,10 +1,9 @@
 import './App.css';
-import MemoHook from './MemoHook';
 function App() {
 
   return (
     <>
-      <MemoHook />
+      <h1>App</h1>
     </>
   );
 }
