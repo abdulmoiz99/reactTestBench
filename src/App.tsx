@@ -1,11 +1,9 @@
-// App.tsx
 import './App.css';
-import { UserList } from './UserList';
 function App() {
 
   return (
     <>
-      <UserList />
+      <h1>App</h1>
     </>
   );
 }
