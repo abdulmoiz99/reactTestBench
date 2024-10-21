@@ -1,11 +1,11 @@
 import './App.css';
-import { Count } from './Count';
+import { Login } from './Login';
 function App() {
 
   return (
     <>
       <h1>
-        <Count />
+        <Login />
       </h1>
     </>
   );

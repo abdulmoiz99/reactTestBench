@@ -1,18 +1,19 @@
 export type State = {
-    count: number
+    username: string
+    password: string
 }
 
 type Action = {
-    type: "INCREMENT" | "DECREMENT"
+    type: "SET_USERNAME" | "SET_PASSWORD",
+    payload: string
 }
 
 export const reducer = (state: State, action: Action) => {
-    console.log(state)
     switch (action.type) {
-        case "INCREMENT":
-            return { count: state.count + 1 }
-        case "DECREMENT":
-            return { count: state.count - 1 }
+        case "SET_USERNAME":
+            return { ...state, username: action.payload }
+        case "SET_PASSWORD":
+            return { ...state, password: action.payload }
         default:
             return state;
     }
