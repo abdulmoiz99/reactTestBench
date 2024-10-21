@@ -1,9 +1,10 @@
 import './App.css';
+import Courses from './Courses';
 function App() {
 
   return (
     <>
-      <h2>App</h2>
+      <Courses />
     </>
   );
 }
