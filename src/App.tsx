@@ -1,12 +1,10 @@
 import './App.css';
-import { Home } from './Home';
-import ThemeProvider from './ThemeProvider';
-import { UserList } from './UserList';
+import MemoHook from './MemoHook';
 function App() {
 
   return (
     <>
-      <UserList />
+      <MemoHook />
     </>
   );
 }
